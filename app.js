@@ -20,7 +20,7 @@ connectToDb((err) => {
 
 // routes
 app.get('/', (req,res) => {
-    res.status(200, {hello: 'hello'})
+    res.status((200).res.json({hello: 'hello'}))
 })
 
 // end-point to fetch all documents
