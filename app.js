@@ -39,7 +39,7 @@ app.get('/g1-exam-questions', (req, res) => {
         })
 })
 
-// end-point to fetch single documents
+// end-point to fetch single documents...
 app.get('/g1-exam-questions/:questionId', (req, res) => {
     const questionId = req.params.questionId
     
