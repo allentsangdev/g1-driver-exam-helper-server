@@ -9,7 +9,7 @@ let PORT = process.env.PORT || 3000
 
 // routes
 app.get('/', (req,res) => {
-    res.status((200).res.json({hello: 'hello'}))
+    res.json({hello:"Hello"})
 })
 
 app.listen(PORT, () => {
