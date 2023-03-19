@@ -18,6 +18,9 @@ connectToDb((err) => {
 })
 
 // routes
+app.get('/', (req,res) => {
+    res.status(200, {hello: 'hello'})
+})
 
 // end-point to fetch all documents
 app.get('/g1-exam-questions', (req, res) => {
