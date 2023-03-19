@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 let PORT = process.env.PORT || 3000
 
-// db connection
+// db connection 
 let db 
 connectToDb((err) => {
     if (!err) {
