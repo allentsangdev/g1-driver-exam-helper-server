@@ -5,12 +5,13 @@ const { connectToDb, getDb } = require('./db')
 // init app & middleware
 const app = express()
 app.use(express.json())
+let PORT = process.env.PORT || 3000
 
 // db connection
 let db 
 connectToDb((err) => {
     if (!err) {
-        app.listen(3000, () => {
+        app.listen(PORT, () => {
             console.log('app listening on port 3000')
         })
         db = getDb()
