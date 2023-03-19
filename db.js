@@ -6,7 +6,7 @@ let dbConnection
 module.exports = {
 
     connectToDb: (cb) => {
-        MongoClient.connect(uri)
+        MongoClient.connect(LOCAL)
             .then((client) => {
                 dbConnection = client.db()
                 return cb()
