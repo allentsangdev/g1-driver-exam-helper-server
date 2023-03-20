@@ -41,7 +41,7 @@ app.get('/g1-exam-questions', (req, res) => {
         })
 })
 
-// end-point to fetch single documents
+// end-point to fetch single documents by ID
 app.get('/g1-exam-questions/:questionId', (req, res) => {
     const questionId = req.params.questionId
     
@@ -57,6 +57,20 @@ app.get('/g1-exam-questions/:questionId', (req, res) => {
     } else {
         res.status(500).json({error:'Not a valid document ID'})
     }
+})
+
+// end-point to fetch single documents by question number
+app.get('/g1-exam-questions/questionNumber/:questionNumber', (req,res) => {
+    const qNumber = req.params.questionNumber
+
+    db.collection('questions')
+        .findOne({questionNumber: qNumber })
+        .then((question) => {
+            res.status(200).json(question)
+        })
+        .catch(err => {
+            res.status(500).json({error:'Could not fetch the documents'})
+        })
 })
 
 // post request
