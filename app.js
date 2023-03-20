@@ -19,6 +19,12 @@ connectToDb((err) => {
 
 // routes
 
+// landing route
+app.get('/', (req,res) => {
+    res.json({WelcomeMessage: "Welcome to the question bank api"})
+})
+
+
 // end-point to fetch all documents
 app.get('/g1-exam-questions', (req, res) => {
 
