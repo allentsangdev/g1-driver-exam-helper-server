@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb')
-let uri = 'mongodb+srv://allen:test123@cluster0.vymlxms.mongodb.net/?retryWrites=true&w=majority'
+let uri = 'mongodb+srv://allen:test123@cluster0.vymlxms.mongodb.net/g1-question-bank?retryWrites=true&w=majority'
 const LOCAL = 'mongodb://localhost:27017/g1-question-bank'
 
 let dbConnection
