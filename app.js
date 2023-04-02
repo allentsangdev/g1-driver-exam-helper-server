@@ -33,7 +33,7 @@ app.get('/g1-exam-questions', (req, res) => {
     let questions = []
 
     db.collection('questions')
-        .find()
+        .find().sort({questionNumber:1}).collation({locale: "en_US", numericOrdering: true})
         .forEach(question => questions.push(question))
         .then(() => {
             res.status(200).json(questions)
@@ -41,6 +41,7 @@ app.get('/g1-exam-questions', (req, res) => {
         .catch(() => {
             res.status(500).json({error: 'Could not fetch the documents'})
         })
+
 })
 
 // end-point to fetch single documents by ID
